@@ -1,0 +1,3 @@
+This is the core Blocks framework that's responsible for discovering plugins, parsing their Plugin.xml files, and creating a database of the found requirements, extension-points, and extensions.
+
+It's not strictly neccessary for Blocks based plugins to link with this framework, but generally they should so that they can use the standard `BLog` logging facility and so that they can use the `BExtensionRegistry` to process any extension points that they declare.

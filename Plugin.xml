@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin
+	id="com.blocks.Blocks"
+	label="Blocks"
+	version="1.0.0"
+	info="Hog Bay Software">
+
+	<extension-point id="main" />	
+</plugin>

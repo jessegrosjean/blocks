@@ -1,0 +1,24 @@
+<!ELEMENT plugin (requirement*, extension-point*, extension*)>
+<!ATTLIST plugin
+id				CDATA #REQUIRED
+label		    CDATA #REQUIRED
+version			CDATA #REQUIRED
+info			CDATA #IMPLIED
+>
+
+<!ELEMENT requirement EMPTY>
+<!ATTLIST requirement
+bundle		    CDATA #REQUIRED
+version			CDATA #IMPLIED
+optional	    (true | false) "false"
+>
+
+<!ELEMENT extension-point EMPTY>
+<!ATTLIST extension-point
+id				CDATA #REQUIRED
+>
+
+<!ELEMENT extension ANY>
+<!ATTLIST extension
+point		    CDATA #REQUIRED
+>
