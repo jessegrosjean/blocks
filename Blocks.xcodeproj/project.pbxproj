@@ -27,8 +27,8 @@
 		43B41EDC0C8498CF0098B651 /* Plugin.xml in Resources */ = {isa = PBXBuildFile; fileRef = 43B41EDB0C8498CF0098B651 /* Plugin.xml */; };
 		43F50A2A0C7DD7D600208E0A /* plugin.dtd in Resources */ = {isa = PBXBuildFile; fileRef = 43F50A290C7DD7D600208E0A /* plugin.dtd */; };
 		43F598F10C90562600D691C2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43F598F00C90562600D691C2 /* Localizable.strings */; };
-		889A4F1B0D5A589700D1E8E9 /* com.blocks.Blocks.markdown in Resources */ = {isa = PBXBuildFile; fileRef = 889A4F1A0D5A589700D1E8E9 /* com.blocks.Blocks.markdown */; };
-		889A4F1E0D5A58C300D1E8E9 /* com.blocks.Blocks.main.markdown in Resources */ = {isa = PBXBuildFile; fileRef = 889A4F1D0D5A58C300D1E8E9 /* com.blocks.Blocks.main.markdown */; };
+		882693140EB0EBE00023A165 /* com.blocks.Blocks.main.markdown in Resources */ = {isa = PBXBuildFile; fileRef = 882693120EB0EBE00023A165 /* com.blocks.Blocks.main.markdown */; };
+		882693150EB0EBE00023A165 /* com.blocks.Blocks.markdown in Resources */ = {isa = PBXBuildFile; fileRef = 882693130EB0EBE00023A165 /* com.blocks.Blocks.markdown */; };
 		88C84B000D3D5103002E1448 /* BlocksDefault.sdef in Resources */ = {isa = PBXBuildFile; fileRef = 88C84AFF0D3D5103002E1448 /* BlocksDefault.sdef */; };
 		88EE08CD0D6DDDFC00BBB551 /* Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 88EE08CC0D6DDDFC00BBB551 /* Blocks.m */; };
 		8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C1666FE841158C02AAC07 /* InfoPlist.strings */; };
@@ -61,8 +61,8 @@
 		43B41EDB0C8498CF0098B651 /* Plugin.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Plugin.xml; sourceTree = "<group>"; };
 		43F50A290C7DD7D600208E0A /* plugin.dtd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = plugin.dtd; sourceTree = "<group>"; };
 		43F598EE0C90561E00D691C2 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
-		889A4F1A0D5A589700D1E8E9 /* com.blocks.Blocks.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = com.blocks.Blocks.markdown; sourceTree = "<group>"; wrapsLines = 1; };
-		889A4F1D0D5A58C300D1E8E9 /* com.blocks.Blocks.main.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = com.blocks.Blocks.main.markdown; sourceTree = "<group>"; wrapsLines = 1; };
+		882693120EB0EBE00023A165 /* com.blocks.Blocks.main.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = com.blocks.Blocks.main.markdown; sourceTree = "<group>"; };
+		882693130EB0EBE00023A165 /* com.blocks.Blocks.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = com.blocks.Blocks.markdown; sourceTree = "<group>"; };
 		88C84AFF0D3D5103002E1448 /* BlocksDefault.sdef */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.sdef; path = BlocksDefault.sdef; sourceTree = "<group>"; };
 		88EE08CC0D6DDDFC00BBB551 /* Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Blocks.m; sourceTree = "<group>"; };
 		8DC2EF5A0486A6940098B216 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -121,9 +121,9 @@
 				43F598F00C90562600D691C2 /* Localizable.strings */,
 				43B41EDB0C8498CF0098B651 /* Plugin.xml */,
 				43F50A290C7DD7D600208E0A /* plugin.dtd */,
+				882693130EB0EBE00023A165 /* com.blocks.Blocks.markdown */,
+				882693120EB0EBE00023A165 /* com.blocks.Blocks.main.markdown */,
 				88C84AFF0D3D5103002E1448 /* BlocksDefault.sdef */,
-				889A4F1A0D5A589700D1E8E9 /* com.blocks.Blocks.markdown */,
-				889A4F1D0D5A58C300D1E8E9 /* com.blocks.Blocks.main.markdown */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -263,8 +263,8 @@
 				43B41EDC0C8498CF0098B651 /* Plugin.xml in Resources */,
 				43F598F10C90562600D691C2 /* Localizable.strings in Resources */,
 				88C84B000D3D5103002E1448 /* BlocksDefault.sdef in Resources */,
-				889A4F1B0D5A589700D1E8E9 /* com.blocks.Blocks.markdown in Resources */,
-				889A4F1E0D5A58C300D1E8E9 /* com.blocks.Blocks.main.markdown in Resources */,
+				882693140EB0EBE00023A165 /* com.blocks.Blocks.main.markdown in Resources */,
+				882693150EB0EBE00023A165 /* com.blocks.Blocks.markdown in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
