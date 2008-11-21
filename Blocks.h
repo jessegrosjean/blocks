@@ -8,13 +8,6 @@
 #import <Blocks/BConfigurationElement.h>
 #import <Blocks/BLog.h>
 
-#pragma mark Localization macros useful in executable extension classes.
-
-#define BLocalizedString(key, comment) [[NSBundle bundleForClass:[self class]] localizedStringForKey:(key) value:@"" table:nil]
-#define BLocalizedStringFromTable(key, tbl, comment) [[NSBundle bundleForClass:[self class]] localizedStringForKey:(key) value:@"" table:(tbl)]
-#define BLocalizedStringFromTableInBundle(key, tbl, bundle, comment) [bundle localizedStringForKey:(key) value:@"" table:(tbl)]
-#define BLocalizedStringWithDefaultValue(key, tbl, bundle, val, comment) [bundle localizedStringForKey:(key) value:(val) table:(tbl)]
-
 // derived from http://rentzsch.com/trac/wiki/JRSwizzle
 @interface NSObject (BlocksMethodSwizzle)
 + (BOOL)replaceMethod:(SEL)originalSelelector withMethod:(SEL)replacementSelector;
@@ -25,3 +18,10 @@
 - (void)addObserver:(id)observer forKeyPath:(NSString *)keyPath selector:(SEL)selector userInfo:(id)userInfo options:(NSKeyValueObservingOptions)options;
 - (void)removeObserver:(id)observer keyPath:(NSString *)keyPath selector:(SEL)selector;
 @end
+
+#pragma mark Blocks Macros.
+
+#define BLocalizedString(key, comment) [[NSBundle bundleForClass:[self class]] localizedStringForKey:(key) value:@"" table:nil]
+#define BLocalizedStringFromTable(key, tbl, comment) [[NSBundle bundleForClass:[self class]] localizedStringForKey:(key) value:@"" table:(tbl)]
+#define BLocalizedStringFromTableInBundle(key, tbl, bundle, comment) [bundle localizedStringForKey:(key) value:@"" table:(tbl)]
+#define BLocalizedStringWithDefaultValue(key, tbl, bundle, val, comment) [bundle localizedStringForKey:(key) value:(val) table:(tbl)]
