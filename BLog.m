@@ -11,6 +11,32 @@
 
 
 @implementation BLog
+/*
+ 
+ Can't get this darn NSExceptionHandler to work!
++ (void)initialize {
+	NSUInteger mask = [[NSExceptionHandler defaultExceptionHandler] exceptionHandlingMask];
+	mask = NSLogUncaughtExceptionMask | NSLogUncaughtSystemExceptionMask | NSLogUncaughtRuntimeErrorMask | NSLogTopLevelExceptionMask | NSLogOtherExceptionMask | NSHandleUncaughtExceptionMask | NSHandleUncaughtSystemExceptionMask | NSHandleUncaughtRuntimeErrorMask | NSHandleTopLevelExceptionMask | NSHandleOtherExceptionMask;
+	[[NSExceptionHandler defaultExceptionHandler] setExceptionHangingMask:mask];
+	[[NSExceptionHandler defaultExceptionHandler] setDelegate:[self sharedInstance]];
+}
+
++ (id)sharedInstance {
+	static id sharedInstance = nil;
+	if (sharedInstance == nil) {
+        sharedInstance = [self alloc];
+		sharedInstance = [sharedInstance init];
+	}
+	return sharedInstance;
+}
+
+- (BOOL)exceptionHandler:(NSExceptionHandler *)sender shouldHandleException:(NSException *)exception mask:(unsigned int)aMask {
+	return YES;
+}
+- (BOOL)exceptionHandler:(NSExceptionHandler *)sender shouldLogException:(NSException *)exception mask:(unsigned int)aMask {
+	return YES;
+}
+*/
 
 static NSUInteger LoggingLevel = LOG_WARNING;
 
