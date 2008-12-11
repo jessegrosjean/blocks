@@ -52,6 +52,7 @@
 + (void)logWithLevel:(NSUInteger)level lineNumber:(NSInteger)lineNumber fileName:(char *)fileName function:(char *)functionName message:(NSString *)message, ...;
 + (void)logErrorWithException:(NSException *)exception lineNumber:(NSInteger)lineNumber fileName:(char *)fileName function:(char *)functionName message:(NSString *)message, ...;
 + (void)assert:(BOOL)assertion lineNumber:(NSInteger)lineNumber fileName:(char *)fileName function:(char *)methodName message:(NSString *)formatStr, ... ;
++ (NSString*)gatherConsoleLogFromDate:(NSDate*)date;
 
 @end
 

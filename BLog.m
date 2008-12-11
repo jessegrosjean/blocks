@@ -68,4 +68,42 @@ static NSUInteger LoggingLevel = LOG_WARNING;
 	va_end(args);
 }
 
+// From http://code.google.com/p/ilcrashreporter-ng/
++ (NSString*)gatherConsoleLogFromDate:(NSDate*)date {
+	aslmsg query = asl_new(ASL_TYPE_QUERY);
+	
+	if(query == NULL) return nil;
+	
+	const uint32_t senderQueryOptions = ASL_QUERY_OP_EQUAL|ASL_QUERY_OP_CASEFOLD|ASL_QUERY_OP_SUBSTRING;
+	const int aslSetSenderQueryReturnCode = asl_set_query(query, ASL_KEY_SENDER, [[[NSProcessInfo processInfo] processName] UTF8String], senderQueryOptions);
+	if(aslSetSenderQueryReturnCode != 0) return nil;
+	
+	static const size_t timeBufferLength = 64;
+	char oneHourAgo[timeBufferLength];
+	snprintf(oneHourAgo, timeBufferLength, "%0lf", [date timeIntervalSince1970]);
+	const int aslSetTimeQueryReturnCode = asl_set_query(query, ASL_KEY_TIME, oneHourAgo, ASL_QUERY_OP_GREATER_EQUAL);
+	if(aslSetTimeQueryReturnCode != 0) return nil;
+	
+	aslresponse response = asl_search(NULL, query);
+	
+	NSMutableString* searchResults = [NSMutableString string];
+
+	for(;;) {
+		aslmsg message = aslresponse_next(response);
+		if(message == NULL) break;
+		const char* time = asl_get(message, ASL_KEY_TIME);
+		if(time == NULL) continue;
+		const char* level = asl_get(message, ASL_KEY_LEVEL);
+		if(level == NULL) continue;
+		const char* messageText = asl_get(message, ASL_KEY_MSG);
+		if(messageText == NULL) continue;
+		NSCalendarDate* date = [NSCalendarDate dateWithTimeIntervalSince1970:atof(time)];
+		[searchResults appendFormat:@"%@[%s]: %s\n", [date description], level, messageText];
+	}
+	
+	aslresponse_free(response);
+	
+	return searchResults;
+}
+
 @end
