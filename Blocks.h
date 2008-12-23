@@ -7,6 +7,7 @@
 #import <Blocks/BExtension.h>
 #import <Blocks/BConfigurationElement.h>
 #import <Blocks/BLog.h>
+#import <Blocks/RegexKitLite.h>
 
 // derived from http://rentzsch.com/trac/wiki/JRSwizzle
 @interface NSObject (BlocksMethodSwizzle)
