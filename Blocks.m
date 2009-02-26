@@ -64,7 +64,7 @@ static char BlocksKVONotificationHelperMagicContext;
 	return self;
 }
 
-- (void) observeValueForKeyPath:(NSString *)aKeyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+- (void)observeValueForKeyPath:(NSString *)aKeyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     if (context == &BlocksKVONotificationHelperMagicContext) {
 		// we only ever sign up for one notification per object, so if we got here
 		// then we *know* that the key path and object are what we want
@@ -139,3 +139,39 @@ static char BlocksKVONotificationHelperMagicContext;
 }
 
 @end
+
+@implementation NSBundle (BlocksMethodReplacements)
+
++ (void)load {
+    if (self == [NSBundle class]) {
+		[[NSUserDefaults standardUserDefaults] registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys:
+												[NSNumber numberWithBool:YES], BDisableColorPickersAndInputManagersDefaultsKey, nil]];
+		[NSBundle replaceMethod:@selector(initWithPath:) withMethod:@selector(Blocks_initWithPath:)];
+    }
+}
+
+- (id)Blocks_initWithPath:(NSString *)fullPath {
+	if ([[NSUserDefaults standardUserDefaults] boolForKey:BDisableColorPickersAndInputManagersDefaultsKey]) {
+		if ([fullPath rangeOfString:@"InputManagers"].location != NSNotFound || [fullPath rangeOfString:@"ColorPickers"].location != NSNotFound) {
+			static NSArray *allowedColorPickers = nil;
+			if (!allowedColorPickers) {
+				allowedColorPickers = [NSArray arrayWithObjects:@"NSColorPickerWheel", @"NSColorPickerUser", @"NSColorPickerSliders", @"NSColorPickerPageableNameList", @"NSColorPickerCrayon", nil];
+			}
+			
+			for (NSString *each in allowedColorPickers) {
+				if ([fullPath rangeOfString:each].location != NSNotFound) {
+					return [self Blocks_initWithPath:fullPath];
+				}
+			}
+			
+			BLogInfo([NSString stringWithFormat:@"Skipping loading of unknown bundles %@", fullPath]);
+			
+			return nil;
+		}
+	}
+	return [self Blocks_initWithPath:fullPath];
+}
+
+@end
+
+NSString *BDisableColorPickersAndInputManagersDefaultsKey = @"BDisableColorPickersAndInputManagersDefaultsKey";
