@@ -7,6 +7,7 @@
 //
 
 #import "BExtensionRegistry.h"
+#import "Blocks.h"
 #import "BLog.h"
 #import "BPlugin.h"
 #import "BExtension.h"
@@ -58,6 +59,21 @@
 #pragma mark Loading
 
 - (void)loadMainExtension {
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	if (![defaults boolForKey:@"BBlocksSupressSonixSN9C102pWebCamComponentWarning"]) {
+		if ([[NSFileManager defaultManager] fileExistsAtPath:@"/Library/QuickTime/Sonix SN9C102p WebCam.component"]) {
+			NSString *processName = [[NSProcessInfo processInfo] processName];
+			NSString *messageText = BLocalizedString(@"Potential Stability Problems", nil);
+			NSString *informativeTextText = [NSString stringWithFormat:BLocalizedString(@"The library /Library/QuickTime/Sonix SN9C102p WebCam.component is known to cause stability problems with %@. If you experience problems please try deleting that library and then restart %@.", nil), processName, processName];
+			NSAlert *alert = [NSAlert alertWithMessageText:messageText defaultButton:BLocalizedString(@"OK", nil) alternateButton:nil otherButton:nil informativeTextWithFormat:informativeTextText];
+			[alert setShowsSuppressionButton:YES];
+			[alert runModal];
+			if ([[alert suppressionButton] state] == NSOnState) {
+				[defaults setBool:YES forKey:@"BBlocksSupressSonixSN9C102pWebCamComponentWarning"];
+			}
+		}
+	}
+	
 	for (BConfigurationElement *each in [self configurationElementsFor:@"com.blocks.Blocks.main"]) {
 		[each createExecutableExtensionFromAttribute:@"class"];
 	}
