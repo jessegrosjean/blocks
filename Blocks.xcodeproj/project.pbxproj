@@ -29,8 +29,8 @@
 		43F598F10C90562600D691C2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43F598F00C90562600D691C2 /* Localizable.strings */; };
 		882693140EB0EBE00023A165 /* com.blocks.Blocks.main.markdown in Resources */ = {isa = PBXBuildFile; fileRef = 882693120EB0EBE00023A165 /* com.blocks.Blocks.main.markdown */; };
 		882693150EB0EBE00023A165 /* com.blocks.Blocks.markdown in Resources */ = {isa = PBXBuildFile; fileRef = 882693130EB0EBE00023A165 /* com.blocks.Blocks.markdown */; };
-		889EAE460F0078F0003D8453 /* RegexKitLite.h in Headers */ = {isa = PBXBuildFile; fileRef = 889EAE440F0078F0003D8453 /* RegexKitLite.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		889EAE470F0078F0003D8453 /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 889EAE450F0078F0003D8453 /* RegexKitLite.m */; };
+		88750CC10FADCFA100C870FE /* RegexKitLite.h in Headers */ = {isa = PBXBuildFile; fileRef = 88750CBF0FADCFA100C870FE /* RegexKitLite.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		88750CC20FADCFA100C870FE /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 88750CC00FADCFA100C870FE /* RegexKitLite.m */; };
 		889EAE500F007958003D8453 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 889EAE4F0F007958003D8453 /* libicucore.dylib */; };
 		88C84B000D3D5103002E1448 /* BlocksDefault.sdef in Resources */ = {isa = PBXBuildFile; fileRef = 88C84AFF0D3D5103002E1448 /* BlocksDefault.sdef */; };
 		88EE08CD0D6DDDFC00BBB551 /* Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 88EE08CC0D6DDDFC00BBB551 /* Blocks.m */; };
@@ -66,8 +66,8 @@
 		43F598EE0C90561E00D691C2 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
 		882693120EB0EBE00023A165 /* com.blocks.Blocks.main.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = com.blocks.Blocks.main.markdown; sourceTree = "<group>"; };
 		882693130EB0EBE00023A165 /* com.blocks.Blocks.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = com.blocks.Blocks.markdown; sourceTree = "<group>"; };
-		889EAE440F0078F0003D8453 /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
-		889EAE450F0078F0003D8453 /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
+		88750CBF0FADCFA100C870FE /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
+		88750CC00FADCFA100C870FE /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
 		889EAE4F0F007958003D8453 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		88C84AFF0D3D5103002E1448 /* BlocksDefault.sdef */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.sdef; path = BlocksDefault.sdef; sourceTree = "<group>"; };
 		88EE08CC0D6DDDFC00BBB551 /* Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Blocks.m; sourceTree = "<group>"; };
@@ -205,8 +205,8 @@
 		889EAE380F0078E2003D8453 /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				889EAE440F0078F0003D8453 /* RegexKitLite.h */,
-				889EAE450F0078F0003D8453 /* RegexKitLite.m */,
+				88750CBF0FADCFA100C870FE /* RegexKitLite.h */,
+				88750CC00FADCFA100C870FE /* RegexKitLite.m */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -227,7 +227,7 @@
 				4373DCB90C7B5ECE0092F66E /* Blocks.h in Headers */,
 				4373DCC40C7B5F080092F66E /* BExtensionRegistry.h in Headers */,
 				4373E0180C7CC7920092F66E /* BExecutableExtensionProxy.h in Headers */,
-				889EAE460F0078F0003D8453 /* RegexKitLite.h in Headers */,
+				88750CC10FADCFA100C870FE /* RegexKitLite.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,7 +320,7 @@
 				4373DCC50C7B5F080092F66E /* BExtensionRegistry.m in Sources */,
 				4373E0190C7CC7920092F66E /* BExecutableExtensionProxy.m in Sources */,
 				88EE08CD0D6DDDFC00BBB551 /* Blocks.m in Sources */,
-				889EAE470F0078F0003D8453 /* RegexKitLite.m in Sources */,
+				88750CC20FADCFA100C870FE /* RegexKitLite.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

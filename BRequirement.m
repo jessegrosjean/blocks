@@ -53,7 +53,7 @@
 		}
 	}
 	
-	if (errorDescription) {
+	if (errorDescription && error != NULL) {
 		*error = [NSError errorWithDomain:@"BlocksErrorDomain" code:0 userInfo:[NSDictionary dictionaryWithObjectsAndKeys:errorDescription, NSLocalizedDescriptionKey, nil]];		
 		return NO;
 	}
