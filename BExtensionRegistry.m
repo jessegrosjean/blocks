@@ -51,7 +51,7 @@
 		extensionPointIDsToConfigurationElements = [[NSMutableDictionary alloc] init];
 		[self discoverPlugins];
 		[self loadMainBundlePluginSharedApplication];
-		[[NSAppleEventManager sharedAppleEventManager] setEventHandler:self andSelector:@selector(handleGetSDEFEvent:withReplyEvent:) forEventClass:'ascr' andEventID:'gsdf'];
+		//[[NSAppleEventManager sharedAppleEventManager] setEventHandler:self andSelector:@selector(handleGetSDEFEvent:withReplyEvent:) forEventClass:'ascr' andEventID:'gsdf'];
 	}
 	return self;
 }
@@ -240,6 +240,7 @@
 	return pluginSearchPaths;
 }
 
+/*
 - (void)handleGetSDEFEvent:(NSAppleEventDescriptor *)event withReplyEvent:(NSAppleEventDescriptor *)replyEvent {
 	NSError *error = nil;
 	NSBundle *blocksBundle = [NSBundle bundleForClass:[self class]];
@@ -288,5 +289,5 @@
 		
 	[replyEvent setDescriptor:[NSAppleEventDescriptor descriptorWithDescriptorType:typeUTF8Text data:[mergedOSAScriptingDefinition XMLData]] forKeyword:keyDirectObject];
 }
-
+*/
 @end
